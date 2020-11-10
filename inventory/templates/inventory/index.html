@@ -1,7 +1,7 @@
 {% extends 'inventory/base.html'%} {% block content %}
 <div class="row">
   <div class="col-4">
-    <a href="" class="btn btn-primary">Desktop</a>
+    <a href="{% url 'desktops' %}" class="btn btn-primary">Desktop</a>
     <a href="" class="btn btn-danger">+</a>
   </div>
   <div class="col-4">
@@ -9,7 +9,7 @@
     <a href="" class="btn btn-danger">+</a>
   </div>
   <div class="col-4">
-    <a href="" class="btn btn-primary">Mobile</a>
+    <a href="{% url 'mobiles' %}" class="btn btn-primary">Mobile</a>
     <a href="" class="btn btn-danger">+</a>
   </div>
 </div>
@@ -20,15 +20,19 @@
       <th scope="col">Model</th>
       <th scope="col">Price</th>
       <th scope="col">status</th>
+      <th scope="col">issues</th>
     </tr>
   </thead>
   <tbody>
+    {% for laptop in laptops %}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{laptop.pk}}</th>
+      <td>{{laptop.type}}</td>
+      <td>{{laptop.price}}</td>
+      <td>{{laptop.status}}</td>
+      <td>{{laptop.issues}}</td>
     </tr>
+    {% endfor %}
   </tbody>
 </table>
 {% endblock %}

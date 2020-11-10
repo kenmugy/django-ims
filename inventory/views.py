@@ -11,3 +11,18 @@ def display_laptops(request):
         'title': 'laptops'
     }
     return render(request, 'inventory/index.html', context)
+
+def display_desktops(request):
+    context = {
+        'desktops': Laptop.objects.all(),
+        'title': 'desktops'
+    }
+    return render(request, 'inventory/index.html', context)
+
+def display_mobiles(request):
+    context = {
+        'mobiles': Laptop.objects.all(),
+        'title': 'mobiles'
+    }
+    return render(request, 'inventory/index.html', context)
+
