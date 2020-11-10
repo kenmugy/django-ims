@@ -24,13 +24,13 @@
     </tr>
   </thead>
   <tbody>
-    {% for laptop in laptops %}
+    {% for item in items %}
     <tr>
-      <th scope="row">{{laptop.pk}}</th>
-      <td>{{laptop.type}}</td>
-      <td>{{laptop.price}}</td>
-      <td>{{laptop.status}}</td>
-      <td>{{laptop.issues}}</td>
+      <th scope="row">{{item.pk}}</th>
+      <td>{{item.type}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.status}}</td>
+      <td>{{item.issues}}</td>
     </tr>
     {% endfor %}
   </tbody>

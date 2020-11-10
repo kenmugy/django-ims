@@ -7,21 +7,21 @@ def index(request):
 
 def display_laptops(request):
     context = {
-        'laptops': Laptop.objects.all(),
+        'items': Laptop.objects.all(),
         'title': 'laptops'
     }
     return render(request, 'inventory/index.html', context)
 
 def display_desktops(request):
     context = {
-        'desktops': Laptop.objects.all(),
+        'items': Desktop.objects.all(),
         'title': 'desktops'
     }
     return render(request, 'inventory/index.html', context)
 
 def display_mobiles(request):
     context = {
-        'mobiles': Laptop.objects.all(),
+        'items': Mobile.objects.all(),
         'title': 'mobiles'
     }
     return render(request, 'inventory/index.html', context)
