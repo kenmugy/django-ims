@@ -28,10 +28,10 @@ def display_mobiles(request):
     return render(request, 'inventory/index.html', context)
 
 def add_lap(request):
-    form = LaptopForm(request.POST||None)
-    if form.is_valid():
-        form.save()
-        return redirect('')
+    form = LaptopForm()
+    # if form.is_valid():
+    #     form.save()
+    #     return redirect('')
 
     return render(request, 'inventory/update.html', {'form': form})
     
