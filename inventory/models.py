@@ -12,4 +12,13 @@ class Device(models.Model):
         
 class Laptop(Device):
     pass
+
+    
+class Desktop(Device):
+    pass
+
+class Mobile(Device):
+    pass
+
+
         
