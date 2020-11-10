@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from .models import Laptop, Desktop, Mobile
+from django.shortcuts import render, redirect
+from inventory.forms import *
+from .models import *
 
 # Create your views here.
 def index(request):
@@ -26,3 +27,11 @@ def display_mobiles(request):
     }
     return render(request, 'inventory/index.html', context)
 
+def add_lap(request):
+    form = LaptopForm(request.POST||None)
+    if form.is_valid():
+        form.save()
+        return redirect('')
+
+    return render(request, 'inventory/update.html', {'form': form})
+    

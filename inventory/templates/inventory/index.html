@@ -6,16 +6,14 @@
   </div>
   <div class="col-4">
     <a href="{% url 'laptops' %}" class="btn btn-primary">Laptop</a>
-    <a href="" class="btn btn-danger">+</a>
+    <a href="{% url 'add_lap' %}" class="btn btn-danger">+</a>
   </div>
   <div class="col-4">
     <a href="{% url 'mobiles' %}" class="btn btn-primary">Mobile</a>
     <a href="" class="btn btn-danger">+</a>
   </div>
 </div>
-<h4 class="mt-4">
-    currently viewing {{title}}
-</h4>
+<h4 class="mt-4">currently viewing {{title}}</h4>
 <table class="table table-striped mt-4">
   <thead>
     <tr>
