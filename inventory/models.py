@@ -22,7 +22,7 @@ class Device(models.Model):
         abstract = True
 
     def __str__(self):
-        return f'Type: {type} | Price: {price}'
+        return f'Type: {self.type} | Price: {self.price}'
         
 class Laptop(Device):
     pass
