@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-4">
     <a href="{% url 'desktops' %}" class="btn btn-primary">Desktop</a>
-    <a href="" class="btn btn-danger">+</a>
+    <a href="{% url 'add_desk' %}" class="btn btn-danger">+</a>
   </div>
   <div class="col-4">
     <a href="{% url 'laptops' %}" class="btn btn-primary">Laptop</a>
@@ -10,7 +10,7 @@
   </div>
   <div class="col-4">
     <a href="{% url 'mobiles' %}" class="btn btn-primary">Mobile</a>
-    <a href="" class="btn btn-danger">+</a>
+    <a href="{% url 'add_mob' %}" class="btn btn-danger">+</a>
   </div>
 </div>
 <h4 class="mt-4">currently viewing {{title}}</h4>

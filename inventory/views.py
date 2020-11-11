@@ -27,13 +27,22 @@ def display_mobiles(request):
     }
     return render(request, 'inventory/index.html', context)
 
-def add_lap(request):
-    form = LaptopForm()
+def update_func(request, dform, redir):
+    form = dform()
     if request.method == 'POST':
-        form = LaptopForm(request.POST)
+        form = dform(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('laptops')
+            return redirect(redir)
 
     return render(request, 'inventory/update.html', {'form': form})
+    
+def add_lap(request):
+    return update_func(request, LaptopForm, 'laptops')
+
+def add_desk(request):
+    return update_func(request, DesktopForm, 'desktops')
+
+def add_mob(request):
+    return update_func(request, MobileForm, 'mobile')
     
